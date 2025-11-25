@@ -1,0 +1,74 @@
+/* Basic Reset and Font Setup */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Light, calming background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    min-height: 100vh; /* Ensure it takes up the full viewport height */
+    text-align: center;
+}
+
+/* Container for the entire logout content */
+.logout-container {
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Header/Branding Area */
+.header h1 {
+    color: #007bff; /* Primary brand color */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Main Message Box Style */
+.message-box {
+    background-color: #ffffff; /* White box background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-top: 5px solid #28a745; /* Green bar to signify success/completion */
+}
+
+.message-box h2 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.message-box p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Log In Button Styling */
+.login-button {
+    display: inline-block;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Security Note */
+.security-note {
+    font-size: 0.9em;
+    color: #dc3545; /* Reddish color to emphasize security */
+    margin-top: 30px;
+    border-top: 1px dashed #e9ecef;
+    padding-top: 15px;
+}
