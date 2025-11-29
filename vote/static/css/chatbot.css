@@ -1,0 +1,195 @@
+/* Chatbot Page Background */
+.chatbot-body {
+    background-color: #FFF5EE;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Conversation Window */
+#chat-window {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+/* Affirmations Buttons (outline → yellow fill on hover) */
+.btn-affirmation {
+    background-color: transparent !important;
+    border: 2px solid #EDC001 !important;
+    /* golden yellow border */
+    color: #EDC001 !important;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-affirmation:hover {
+    background-color: #ba8337 !important;
+    /* bronze fill */
+    border-color: #ba8337 !important;
+    color: white !important;
+}
+
+/* Resources Buttons (outline → bronze fill on hover) */
+.btn-resource {
+    background-color: transparent !important;
+    border: 2px solid #b9585d !important;
+    /* reddish border */
+    color: #b9585d !important;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-resource:hover {
+    background-color: #ba8337 !important;
+    /* bronze fill */
+    border-color: #ba8337 !important;
+    color: white !important;
+}
+
+/* Chatbot action buttons (Send & Clear Chat → Read More style) */
+.btn-chatbot {
+    background-color: #b9585d !important;
+    /* reddish base */
+    border: 2px solid #b9585d !important;
+    /* reddish border */
+    color: white !important;
+    font-weight: bold;
+    padding: 0 16px;
+    /* remove vertical padding so height matches input */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* Hover effect */
+.btn-chatbot:hover {
+    background-color: #ba8337 !important;
+    /* bronze hover */
+    border-color: #ba8337 !important;
+    color: white !important;
+}
+
+/* Force input and button same height */
+.input-group .form-control,
+.input-group-append .btn-chatbot {
+    height: 45px;
+    /* fixed height for both */
+}
+
+/* Make Clear Chat button same width as Send */
+.btn-clear-chat {
+    width: 100%;
+    /* full width of input group append */
+    max-width: 120px;
+    /* match Send button width */
+    text-align: center;
+}
+
+/* Links inside chatbot should match Send & Clear Chat buttons */
+/* Keep button style for text links */
+.chatbot-box a:not(:has(img)) {
+    background-color: #b9585d !important;
+    border: 2px solid #b9585d !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+/* Plain image links */
+.chatbot-box a img {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    /* adjust size */
+    height: auto;
+}
+
+
+.chatbot-box a:hover {
+    background-color: #ba8337 !important;
+    /* bronze hover */
+    border-color: #ba8337 !important;
+    color: white !important;
+}
+
+/* Resources heading */
+.resources-heading {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    /* spacing below Affirmations */
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border: none;
+    /* remove orange/bronze line */
+}
+
+/* Resources grid layout: 3 columns */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 hearts per row */
+    gap: 30px;
+    /* spacing between hearts */
+    justify-items: center;
+    /* center each heart */
+    text-align: center;
+    /* center labels under images */
+}
+
+/* Each resource block */
+.resource-block {
+    width: 200px;
+    /* fixed width for each heart block */
+    margin-bottom: 20px;
+}
+
+/* Resource images (hearts) */
+.resource-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    /* smooth hover effect */
+    border: 2px solid transparent;
+    /* prepare for hover border */
+}
+
+/* Hover effect like Clear Chat button */
+.resource-block a:hover .resource-img {
+    border-color: #ba8337;
+    /* bronze border */
+    transform: scale(1.05);
+    /* slight zoom */
+    cursor: pointer;
+}
+
+/* Special case: single item in last row */
+.single-center {
+    grid-column: 2;
+    /* place the single heart in the middle column */
+}

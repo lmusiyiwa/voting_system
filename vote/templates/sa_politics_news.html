@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Politics & Mental Health</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/leaders.css' %}">
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .news-article {
+            margin-bottom: 20px;
+        }
+
+        .leader-img {
+            width: 100%;
+            max-height: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Primary button style (used for both Read More & Visit Website) */
+        .btn-primary {
+            background-color: #b9585d !important;
+            /* reddish base */
+            border-color: #b9585d !important;
+            color: white !important;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #ba8337 !important;
+            /* bronze hover */
+            border-color: #ba8337 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PRESIDENT + MENTAL HEALTH SECTION -->
+    <h1 class="mb-4 text-center">Politics & Mental Health</h1>
+
+
+    {% if article.image %}
+    <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+    {% else %}
+    <div class="card-body text-center">
+        <p><strong>Explore your next President, but first let us check in on your mental health!</strong></p>
+        <p>Please click on the link below for our Politics Chatbot, Affirmations and Resources:</p>
+        <a href="{% url 'chatbot' %}" class="btn btn-primary">Go to Chatbot</a>
+    </div>
+    {% endif %}
+
+
+
+    <!-- LEADERS SECTION -->
+    <h1 class="mb-4 text-center">The Next Big Change</h1>
+
+
+
+    {% if leaders %}
+    <div class="row">
+        {% for leader in leaders %}
+        <div class="col-md-4">
+            <div class="card">
+                {% if leader.photo %}
+                <img src="{{ leader.photo.url }}" class="card-img-top leader-img" alt="{{ leader.name }}">
+                {% else %}
+                <img src="{% static 'images/default-leader.jpg' %}" class="card-img-top leader-img" alt="No image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ leader.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ leader.party }}</h6>
+
+                    {% if leader.biography %}
+                    <p class="card-text">{{ leader.biography }}</p>
+                    {% endif %}
+
+                    {% if leader.community_contribution %}
+                    <p class="card-text"><strong>Community Contribution:</strong> {{ leader.community_contribution }}
+                    </p>
+                    {% endif %}
+
+                    {% if leader.date_of_birth %}
+                    <p class="card-text"><strong>Date of Birth:</strong> {{ leader.date_of_birth }}</p>
+                    {% endif %}
+
+                    {% if leader.website %}
+                    <!-- Visit Website button now styled same as Read More -->
+                    <a href="{{ leader.website }}" class="btn btn-primary" target="_blank">Visit Website</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No leaders found.</p>
+    {% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+.card-img-top.leader-img {
+    width: 100%;
+    height: auto;
+    /* keeps natural aspect ratio */
+    max-height: 500px;
+    /* optional limit */
+    object-fit: contain;
+    /* shows full image, no cropping */
+    object-position: center;
+    /* centers the image */
+}
+
+
+/* PAGE BACKGROUND */
+body {
+    background-color: #FFF5EE;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADINGS */
+h1 {
+    color: #080500;
+    font-weight: bold;
+    border-bottom: 3px solid #ba8337;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+/* NEWS + LEADER CARDS */
+.card {
+    background-color: #ffffff;
+    /* clean white background */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* CARD TITLES */
+.card-title {
+    color: #0c0700;
+    font-weight: bold;
+}
+
+/* SUBTITLES */
+.card-subtitle {
+    color: #0b0001 !important;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #b9585d !important;
+    border-color: #b9585d !important;
+}
+
+.btn-primary:hover {
+    background-color: #ba8337 !important;
+    border-color: #ba8337 !important;
+}
+
+/* Visit Website Button (two-tone gradient like Read More) */
+.btn-website {
+    background: linear-gradient(45deg, #EDC001, #ba8337) !important;
+    /* golden yellow to bronze */
+    border: none !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.btn-website:hover {
+    background: linear-gradient(45deg, #ba8337, #EDC001) !important;
+    /* reverse gradient on hover */
+    color: white !important;
+}
+
+/* NEWS ARTICLE SPACING */
+.news-article {
+    margin-bottom: 20px;
+}
+
+/* LEADER IMAGES */
+.leader-img {
+    width: 289%;
+    height: 483;
+    /* fixed height for consistency */
+    object-fit: cover;
+    /* fills card */
+    object-position: top;
+    /* keeps heads in view */
+}
+
+/* Override Bootstrap's card-img-top for leader images */
+.card-img-top.leader-img {
+    width: 100% !important;
+    /* fill card width */
+    height: 500px !important;
+    /* increase length */
+    object-fit: cover !important;
+    /* fill nicely */
+    object-position: top !important;
+    /* keep heads visible */
+    display: block;
+}
